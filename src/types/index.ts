@@ -1,5 +1,7 @@
 export type TabType = 'all' | 'priority' | 'mentions';
 
+export type HomeTabType = 'for-you' | 'following';
+
 export type NotificationType = 'follow' | 'like' | 'repost' | 'verified' | 'post-alert';
 
 export interface AvatarSpec {
@@ -39,4 +41,46 @@ export interface WhoToFollowUserData {
   followsYou?: boolean;
   avatarClass: string;
   initialFollowingState?: boolean;
+}
+
+export interface TweetMedia {
+  type: 'image' | 'poll' | 'quote';
+  url?: string;
+  title?: string;
+  subtitle?: string;
+  gradientClass?: string;
+}
+
+export interface TweetAuthor {
+  name: string;
+  handle: string;
+  avatarClass?: string;
+  avatarUrl?: string;
+  isVerified?: boolean;
+  isGoldVerified?: boolean;
+}
+
+export interface TweetMetrics {
+  replies: number;
+  reposts: number;
+  likes: number;
+  views: string;
+  bookmarks: number;
+}
+
+export interface TweetUserActions {
+  liked?: boolean;
+  reposted?: boolean;
+  bookmarked?: boolean;
+}
+
+export interface Tweet {
+  id: string;
+  author: TweetAuthor;
+  content: string;
+  timestamp: string;
+  media?: TweetMedia;
+  metrics: TweetMetrics;
+  userActions?: TweetUserActions;
+  tab?: HomeTabType | 'both';
 }

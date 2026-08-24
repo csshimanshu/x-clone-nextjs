@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import Link from 'next/link';
 
 interface NavItemProps {
   label: string;
@@ -15,21 +18,29 @@ export const NavItem: React.FC<NavItemProps> = ({
   href = '#',
   onClick,
 }) => {
+  if (onClick) {
+    return (
+      <button
+        className={`nav-item ${active ? 'active' : ''}`}
+        aria-label={label}
+        aria-current={active ? 'page' : undefined}
+        onClick={onClick}
+      >
+        {icon}
+        <span className={`nav-label ${active ? 'bold-label' : ''}`}>{label}</span>
+      </button>
+    );
+  }
+
   return (
-    <a
+    <Link
       href={href}
       className={`nav-item ${active ? 'active' : ''}`}
       aria-label={label}
       aria-current={active ? 'page' : undefined}
-      onClick={(e) => {
-        if (onClick) {
-          e.preventDefault();
-          onClick();
-        }
-      }}
     >
       {icon}
       <span className={`nav-label ${active ? 'bold-label' : ''}`}>{label}</span>
-    </a>
+    </Link>
   );
 };

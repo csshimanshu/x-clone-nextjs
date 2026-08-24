@@ -2,11 +2,11 @@
 
 import React, { useState } from 'react';
 import { LeftSidebar } from '@/components/Sidebar/LeftSidebar';
-import { HomeFeed } from '@/components/Home/HomeFeed';
+import { NotificationsFeed } from '@/components/Notifications/NotificationsFeed';
 import { RightSidebar } from '@/components/Widgets/RightSidebar';
 import { ComposeModal } from '@/components/Modal/ComposeModal';
 
-export default function HomePage() {
+export default function NotificationsPage() {
   const [isComposeOpen, setIsComposeOpen] = useState(false);
 
   return (
@@ -14,8 +14,8 @@ export default function HomePage() {
       {/* Left Navigation Column */}
       <LeftSidebar onOpenComposeModal={() => setIsComposeOpen(true)} />
 
-      {/* Center Main Home Timeline Feed */}
-      <HomeFeed />
+      {/* Center Notifications Stream */}
+      <NotificationsFeed />
 
       {/* Right Widgets Column */}
       <RightSidebar />

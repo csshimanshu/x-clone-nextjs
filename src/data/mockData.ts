@@ -1,4 +1,4 @@
-import { NotificationItemData, TrendItemData, WhoToFollowUserData } from '@/types';
+import { NotificationItemData, TrendItemData, WhoToFollowUserData, Tweet } from '@/types';
 
 export const mockNotifications: NotificationItemData[] = [
   {
@@ -134,5 +134,110 @@ export const mockWhoToFollow: WhoToFollowUserData[] = [
     isVerified: true,
     avatarClass: 'user-av-liam',
     initialFollowingState: false,
+  },
+];
+
+export const mockHomeTweets: Tweet[] = [
+  {
+    id: 'tweet-1',
+    author: {
+      name: 'Himanshu - You...',
+      handle: '@HimanshuYTA',
+      avatarClass: 'avatar-himanshu',
+      isVerified: true,
+    },
+    content: 'Youtube is one of the best Passive Income printer 💵🤑💰\n\nIf you set up high-retention workflows with consistent distribution, the compound interest on your catalog works 24/7 while you sleep.',
+    timestamp: '37m',
+    media: {
+      type: 'image',
+      title: 'Automated Revenue Pipeline',
+      subtitle: 'Audio Rack & Server Analytics Preview',
+      gradientClass: 'tweet-media-audio-rack',
+    },
+    metrics: {
+      replies: 18,
+      reposts: 31,
+      likes: 242,
+      views: '14.8K',
+      bookmarks: 54,
+    },
+    userActions: {
+      liked: false,
+      reposted: false,
+      bookmarked: false,
+    },
+    tab: 'both',
+  },
+  {
+    id: 'tweet-2',
+    author: {
+      name: 'Guillermo Rauch',
+      handle: '@rauchg',
+      avatarClass: 'user-av-rauch',
+      isVerified: true,
+    },
+    content: 'Next.js App Router + React Server Components is fundamentally shifting how web apps achieve instant initial page loads without sacrificing client-side richness.\n\nFast by default, seamless caching, and zero bundle size for server-only logic.',
+    timestamp: '2h',
+    metrics: {
+      replies: 142,
+      reposts: 680,
+      likes: 4210,
+      views: '240K',
+      bookmarks: 890,
+    },
+    userActions: {
+      liked: true,
+      reposted: false,
+      bookmarked: true,
+    },
+    tab: 'for-you',
+  },
+  {
+    id: 'tweet-3',
+    author: {
+      name: 'Liam YTA',
+      handle: '@LiamHarperYTA',
+      avatarClass: 'user-av-liam',
+      isVerified: true,
+    },
+    content: 'Just dropped a full breakdown on scaling Next.js applications to 10M+ monthly users with zero downtime deployments. What tech stack are you building your SaaS with this year? 👇',
+    timestamp: '4h',
+    metrics: {
+      replies: 89,
+      reposts: 120,
+      likes: 850,
+      views: '65K',
+      bookmarks: 210,
+    },
+    userActions: {
+      liked: false,
+      reposted: false,
+      bookmarked: false,
+    },
+    tab: 'following',
+  },
+  {
+    id: 'tweet-4',
+    author: {
+      name: 'Grok',
+      handle: '@grok',
+      avatarClass: 'user-av-grok-official',
+      isVerified: true,
+    },
+    content: 'Real-time understanding of what’s happening in the world, with zero filter. Ask me anything about the universe, code, or the latest news.',
+    timestamp: '6h',
+    metrics: {
+      replies: 450,
+      reposts: 1890,
+      likes: 12400,
+      views: '1.2M',
+      bookmarks: 1420,
+    },
+    userActions: {
+      liked: false,
+      reposted: false,
+      bookmarked: false,
+    },
+    tab: 'for-you',
   },
 ];
